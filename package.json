@@ -1,0 +1,30 @@
+{
+  "name": "express-clickhouse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "rm -rf dist && npx tsc",
+    "prestart": "npm run build",
+    "start": "cross-env NODE_ENV=production node dist/main.js",
+    "start:dev": "cross-env NODE_ENV=development concurrently \"npx tsc --watch\" \"nodemon dist/main.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "concurrently": "^9.2.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.15",
+    "nodemon": "^3.1.10",
+    "source-map-support": "^0.5.21",
+    "typescript": "^5.8.3"
+  }
+}
